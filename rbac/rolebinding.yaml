@@ -1,0 +1,14 @@
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: todo-app-reader-binding
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: todo-app-sa
+    namespace: default
+roleRef:
+  kind: Role
+  name: todo-app-reader
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: todo-app-helm-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: helm-manual
+  volumeName: todo-app-helm-pv
+  resources:
+    requests:
+      storage: 1Gi
